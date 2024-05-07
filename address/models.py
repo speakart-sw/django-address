@@ -245,6 +245,13 @@ class Address(models.Model):
         blank=True,
         null=True,
     )
+    country = models.ForeignKey(
+        Country,
+        on_delete=models.CASCADE,
+        related_name="addresses",
+        blank=True,
+        null=True,
+    )
     raw = models.CharField(max_length=200)
     formatted = models.CharField(max_length=200, blank=True)
     latitude = models.FloatField(blank=True, null=True)
